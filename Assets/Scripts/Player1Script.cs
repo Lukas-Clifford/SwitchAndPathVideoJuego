@@ -15,11 +15,8 @@ public class PlayerScript : MonoBehaviour
     private Vector3 playerInput;
 
     public float speed = 5f;
-    public float fallVelocity;
-
-
+    public float fallVelocity = 0f;
     public float JumpForce = 5f;
-    public bool isGrounded;
 
 
     public Camera mainCamera;
@@ -30,16 +27,14 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody rigidBody;
 
 
-
     void Start()
     {
         player = GetComponent<CharacterController>();
-        rigidBody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {    
+
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
 
@@ -55,7 +50,7 @@ public class PlayerScript : MonoBehaviour
 
         SetGravity();
         
-        Jump();
+        PlayerSkills();
 
         player.Move(playerMovement*Time.deltaTime);
 
@@ -80,23 +75,6 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-
-    public void OnCollisionEnter(Collision collision) 
-    {
-        if (collision.gameObject.tag == "Ground") 
-        {
-            isGrounded = true;
-        }
-
-    }
-
-    public void OnCollisionExit(Collision collision) 
-    {
-        if (collision.gameObject.tag == "Ground") 
-        {
-            isGrounded = false;
-        }
-    }
 
     public void SetGravity()
     {
@@ -123,5 +101,10 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    private void PlayerSkills()
+    {
+        Jump();
+    }
+    
 
 }
