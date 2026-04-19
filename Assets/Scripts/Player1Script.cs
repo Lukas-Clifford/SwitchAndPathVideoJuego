@@ -10,9 +10,9 @@ public class PlayerScript : MonoBehaviour
     private float verticalMove = 0f;
     
     private Vector3 playerMovement;
-    private float gravity = 9.8f;
-
     private Vector3 playerInput;
+
+    private float gravity = 9.8f;
 
     public float speed = 5f;
     public float fallVelocity = 0f;
@@ -23,8 +23,6 @@ public class PlayerScript : MonoBehaviour
     private Vector3 camForward;
     private Vector3 camRight;
     
-
-    private Rigidbody rigidBody;
 
 
     void Start()
