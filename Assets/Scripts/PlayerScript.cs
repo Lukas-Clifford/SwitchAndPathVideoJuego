@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
     public bool isGrounded;
 
     private Rigidbody rigidBody;
+    
 
 
     void Start()
