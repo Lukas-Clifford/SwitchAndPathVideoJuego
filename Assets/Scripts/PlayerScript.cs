@@ -33,6 +33,11 @@ public class PlayerScript : MonoBehaviour
     public GameManager gameManager;
     
     
+    public Transform shootingPoint;
+    public Rigidbody projectilePrefab;
+    public float shootForce = 20f;
+
+
     void Start()
     {
         player = GetComponent<CharacterController>();
@@ -130,6 +135,7 @@ public class PlayerScript : MonoBehaviour
     private void PlayerSkills()
     {
         Jump();
+        Shoot();
     }
 
     public void Jump() 
@@ -146,6 +152,26 @@ public class PlayerScript : MonoBehaviour
             fallVelocity = JumpForce;
             playerMovement.y = fallVelocity;
         }
+    }
+
+    public void Shoot()
+    {
+        if(Input.GetButtonDown("Shoot_P1") && isPlayerOne)
+        {
+            Rigidbody projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation);
+            projectile.linearVelocity = shootingPoint.forward * shootForce;
+            Destroy(projectile.gameObject, 1f); 
+
+        } 
+        else if(Input.GetButtonDown("Shoot_P2") && !isPlayerOne)
+        {
+
+            Rigidbody projectile = Instantiate(projectilePrefab, shootingPoint.position, shootingPoint.rotation);
+            projectile.linearVelocity = shootingPoint.forward * shootForce;
+            Destroy(projectile.gameObject, 1f); 
+
+        }
+        
     }
     
 
