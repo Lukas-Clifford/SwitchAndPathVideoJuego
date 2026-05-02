@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-
+    public Animator animator;
     
     public CharacterController player;
     public Vector3 spawnPoint;
@@ -51,13 +51,16 @@ public class PlayerScript : MonoBehaviour
             horizontalMove = Input.GetAxis("Horizontal_P2");
             verticalMove = Input.GetAxis("Vertical_P2");
         }
-
-
         
         
 
         playerInput = new Vector3(horizontalMove, 0, verticalMove);
         playerInput = Vector3.ClampMagnitude(playerInput, 1);
+        if (playerInput.magnitude > 0.1f) 
+            animator.SetBool("running", true);
+        else 
+            animator.SetBool("running", false);
+
 
         playerMovement = playerInput.x * camRight + playerInput.z * camForward;
         playerMovement *= speed;
@@ -113,6 +116,7 @@ public class PlayerScript : MonoBehaviour
         if (player.isGrounded)
         {
             fallVelocity = -gravity * Time.deltaTime;
+            animator.SetBool("jumping", false);
         }
         else
         {
@@ -132,11 +136,13 @@ public class PlayerScript : MonoBehaviour
     {
         if(player.isGrounded && Input.GetButtonDown("Jump_P1") && isPlayerOne)
         {
+            animator.SetBool("jumping", true);
             fallVelocity = JumpForce;
             playerMovement.y = fallVelocity;
         }
         else if(player.isGrounded && Input.GetButtonDown("Jump_P2") && !isPlayerOne)
         {
+            animator.SetBool("jumping", true);
             fallVelocity = JumpForce;
             playerMovement.y = fallVelocity;
         }
