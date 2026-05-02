@@ -30,6 +30,7 @@ public class PlayerScript : MonoBehaviour
 
 
     public bool isPlayerOne = true;
+    public GameManager gameManager;
     
     
     void Start()
@@ -81,6 +82,11 @@ public class PlayerScript : MonoBehaviour
         else if (distance <= cameraMinDistance)
         {
             mainCamera.transform.position -= (new Vector3(0,0,3) * Time.deltaTime);
+        }
+
+        if (player.transform.position.y < -10)
+        {
+            gameManager.RespawnPlayers();
         }
 
 
