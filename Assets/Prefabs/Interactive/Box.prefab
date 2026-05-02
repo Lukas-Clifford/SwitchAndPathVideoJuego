@@ -135,10 +135,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 442b71d5ea27bef4bb81477c257ebbf2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2346485095408076349}
   m_SourcePrefab: {fileID: 100100000, guid: 442b71d5ea27bef4bb81477c257ebbf2, type: 3}
 --- !u!4 &1349918397360587209 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 442b71d5ea27bef4bb81477c257ebbf2, type: 3}
   m_PrefabInstance: {fileID: 1527114844418614818}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1869010397302954867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 442b71d5ea27bef4bb81477c257ebbf2, type: 3}
+  m_PrefabInstance: {fileID: 1527114844418614818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2346485095408076349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869010397302954867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59fe4076ea8de14baad11337c051044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CubeRespawn
+  spawnPoint: {fileID: 0}
+  fallThreshold: -10
