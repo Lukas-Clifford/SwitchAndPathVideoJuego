@@ -1983,7 +1983,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1957945918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3330d5071f2df3ae9738790b99bc7b1, type: 3}
+  m_Script: {fileID: 11500000, guid: bf2c144a4daa5824187ef9484bd29486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   player: {fileID: 1957945924}
