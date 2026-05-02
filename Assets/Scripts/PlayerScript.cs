@@ -95,7 +95,11 @@ public class PlayerScript : MonoBehaviour
         if (player.transform.position.y < -10)
         {
             gameManager.RespawnPlayers();
-            mainCamera.transform.position.z = player.transform.position.z - 18;
+            mainCamera.transform.position = new Vector3(
+                mainCamera.transform.position.x,
+                mainCamera.transform.position.y,
+                player.transform.position.z - 18f
+            );        
         }
 
 
