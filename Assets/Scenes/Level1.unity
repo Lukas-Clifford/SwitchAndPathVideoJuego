@@ -138,13 +138,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   animator: {fileID: 684134050}
   player: {fileID: 2110984}
-  spawnPoint: {x: 0, y: 0, z: 0}
+  spawnPoint: {x: 2, y: 0.96, z: 0}
   speed: 5
   fallVelocity: 0
   JumpForce: 3
   mainCamera: {fileID: 981792534}
-  cameraMaxDistance: 25
-  cameraMinDistance: 20
+  cameraMaxDistance: 28
+  cameraMinDistance: 25
   isPlayerOne: 0
   gameManager: {fileID: 1639199461}
   shootingPoint: {fileID: 1479535919}
@@ -1004,6 +1004,7 @@ Transform:
   - {fileID: 1100268598}
   - {fileID: 1138623934}
   - {fileID: 413655959}
+  - {fileID: 911796907}
   - {fileID: 779857446}
   - {fileID: 986120675}
   - {fileID: 446837330}
@@ -1012,7 +1013,9 @@ Transform:
   - {fileID: 2011981968}
   - {fileID: 1909163807}
   - {fileID: 833744645}
+  - {fileID: 493010783}
   - {fileID: 231590385}
+  - {fileID: 1622682632}
   - {fileID: 487830011}
   - {fileID: 108752434}
   - {fileID: 1995720763}
@@ -1522,7 +1525,7 @@ Transform:
   m_GameObject: {fileID: 304781493}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 1.7699999, z: 0}
+  m_LocalPosition: {x: -0.02, y: 1.02, z: 0.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2696,6 +2699,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
   m_PrefabInstance: {fileID: 487830010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &493010782
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 166392194}
+    m_Modifications:
+    - target: {fileID: 1693856427582544314, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_Name
+      value: Wooden-Trapdoor (116)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 98.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+--- !u!4 &493010783 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+  m_PrefabInstance: {fileID: 493010782}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &497843570 stripped
 Transform:
@@ -4100,7 +4165,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 895346826532902558, guid: 50929bb43e8a76048bb2fd4261ee51e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.92
+      value: 8.02
       objectReference: {fileID: 0}
     - target: {fileID: 895346826532902558, guid: 50929bb43e8a76048bb2fd4261ee51e7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4108,7 +4173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 895346826532902558, guid: 50929bb43e8a76048bb2fd4261ee51e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.61
+      value: 11.45
       objectReference: {fileID: 0}
     - target: {fileID: 895346826532902558, guid: 50929bb43e8a76048bb2fd4261ee51e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4869,6 +4934,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1890117605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &911796906
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 166392194}
+    m_Modifications:
+    - target: {fileID: 1693856427582544314, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_Name
+      value: Wooden-Trapdoor (92)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 90.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+--- !u!4 &911796907 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+  m_PrefabInstance: {fileID: 911796906}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &911860570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6046,13 +6173,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   animator: {fileID: 396506480}
   player: {fileID: 1115930881}
-  spawnPoint: {x: 0, y: 0, z: 0}
+  spawnPoint: {x: -5.88, y: 1.1, z: 0}
   speed: 5
   fallVelocity: 0
   JumpForce: 3
   mainCamera: {fileID: 981792534}
-  cameraMaxDistance: 25
-  cameraMinDistance: 20
+  cameraMaxDistance: 28
+  cameraMinDistance: 25
   isPlayerOne: 1
   gameManager: {fileID: 1639199461}
   shootingPoint: {fileID: 304781494}
@@ -7877,7 +8004,7 @@ Transform:
   m_GameObject: {fileID: 1479535918}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.91, z: 0}
+  m_LocalPosition: {x: 0, y: 1.23, z: 0.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8157,6 +8284,68 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1115930884}
   m_SourcePrefab: {fileID: 100100000, guid: 454dfcb1f677101dbb57a89eebebf4d3, type: 3}
+--- !u!1001 &1622682631
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 166392194}
+    m_Modifications:
+    - target: {fileID: 1693856427582544314, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_Name
+      value: Wooden-Trapdoor (117)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 87.438
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+--- !u!4 &1622682632 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8152826008116463755, guid: 2d7012caad4f8fb4a8fed9b5215afdf3, type: 3}
+  m_PrefabInstance: {fileID: 1622682631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1639199460
 GameObject:
   m_ObjectHideFlags: 0
@@ -8186,8 +8375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d57c3cb676f83862f8b3ffff9a7e1521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  player1: {fileID: 1115930880}
+  player2: {fileID: 2110983}
 --- !u!4 &1639199462
 Transform:
   m_ObjectHideFlags: 0
