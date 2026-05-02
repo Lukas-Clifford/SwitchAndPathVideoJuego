@@ -5,14 +5,15 @@ public class PlayerScript : MonoBehaviour
 
     
     public CharacterController player;
+    public Vector3 spawnPoint;
 
     private float horizontalMove = 0f;
     private float verticalMove = 0f;
     
     private Vector3 playerMovement;
-    private float gravity = 9.8f;
-
     private Vector3 playerInput;
+
+    private float gravity = 9.8f;
 
     public float speed = 5f;
     public float fallVelocity = 0f;
@@ -22,11 +23,16 @@ public class PlayerScript : MonoBehaviour
     public Camera mainCamera;
     private Vector3 camForward;
     private Vector3 camRight;
+    private Vector3 camPos;
+
+    public int cameraMaxDistance = 23;
+    public int cameraMinDistance = 17;
+
+
+    public bool isPlayerOne = true;
+    public GameManager gameManager;
     
-
-    private Rigidbody rigidBody;
-
-
+    
     void Start()
     {
         player = GetComponent<CharacterController>();
@@ -35,27 +41,53 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {    
 
-        horizontalMove = Input.GetAxis("Horizontal");
-        verticalMove = Input.GetAxis("Vertical");
+        if (isPlayerOne)
+        {
+            horizontalMove = Input.GetAxis("Horizontal_P1");
+            verticalMove = Input.GetAxis("Vertical_P1");
+        } 
+        else 
+        {
+            horizontalMove = Input.GetAxis("Horizontal_P2");
+            verticalMove = Input.GetAxis("Vertical_P2");
+        }
+
+
+        
+        
 
         playerInput = new Vector3(horizontalMove, 0, verticalMove);
         playerInput = Vector3.ClampMagnitude(playerInput, 1);
-        
-        camDirection();
 
         playerMovement = playerInput.x * camRight + playerInput.z * camForward;
         playerMovement *= speed;
 
         player.transform.LookAt(player.transform.position + playerMovement);
 
-        SetGravity();
         
+        camDirection();
+        SetGravity();
         PlayerSkills();
 
         player.Move(playerMovement*Time.deltaTime);
 
-
         
+        camPos = mainCamera.transform.position;
+        float distance = Vector3.Distance(camPos, player.transform.position);
+
+        if(distance >= cameraMaxDistance) 
+        {
+            mainCamera.transform.position += (new Vector3(0,0,3) * Time.deltaTime);
+        }
+        else if (distance <= cameraMinDistance)
+        {
+            mainCamera.transform.position -= (new Vector3(0,0,3) * Time.deltaTime);
+        }
+
+        if (player.transform.position.y < -10)
+        {
+            gameManager.RespawnPlayers();
+        }
 
 
     }
@@ -65,7 +97,6 @@ public class PlayerScript : MonoBehaviour
     {
         camForward = mainCamera.transform.forward;
         camRight = mainCamera.transform.right;
-
 
         camForward.y = 0;
         camRight.y = 0;
@@ -92,18 +123,23 @@ public class PlayerScript : MonoBehaviour
 
     }
 
+    private void PlayerSkills()
+    {
+        Jump();
+    }
+
     public void Jump() 
     {
-        if(player.isGrounded && Input.GetButtonDown("Jump"))
+        if(player.isGrounded && Input.GetButtonDown("Jump_P1") && isPlayerOne)
         {
             fallVelocity = JumpForce;
             playerMovement.y = fallVelocity;
         }
-    }
-
-    private void PlayerSkills()
-    {
-        Jump();
+        else if(player.isGrounded && Input.GetButtonDown("Jump_P2") && !isPlayerOne)
+        {
+            fallVelocity = JumpForce;
+            playerMovement.y = fallVelocity;
+        }
     }
     
 
