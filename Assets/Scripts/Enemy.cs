@@ -5,8 +5,10 @@ public class Enemy : MonoBehaviour
     public GameManager gameManager;
 
     private bool isMoving = true;
-    private int stunCountdown = 10;
+    private float stunCountdown = 10;
     public Vector3 spawnPoint;
+
+    public float speed = 1;
 
     void Start()
     {        
@@ -19,18 +21,18 @@ public class Enemy : MonoBehaviour
             this.transform.position = new Vector3(
                 this.transform.position.x,
                 this.transform.position.y,
-                this.transform.position.z + 0.02f             
+                this.transform.position.z + speed * Time.deltaTime            
             );  
         }
         else 
         {
             if (stunCountdown > 0)
             {
-                stunCountdown -= 1;
+                stunCountdown -= 1 * Time.deltaTime;
             }
             else 
             {
-                stunCountdown = 2;
+                stunCountdown = 10;
                 isMoving = true;
             }
         }
