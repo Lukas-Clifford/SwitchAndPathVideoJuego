@@ -8436,8 +8436,8 @@ MonoBehaviour:
   player2: {fileID: 2110983}
   enemy: {fileID: 2024164990}
   mainCamera: {fileID: 981792534}
-  cameraMaxDistance: 23
-  cameraMinDistance: 17
+  cameraMaxDistance: 30
+  cameraMinDistance: 20
 --- !u!4 &1639199462
 Transform:
   m_ObjectHideFlags: 0
