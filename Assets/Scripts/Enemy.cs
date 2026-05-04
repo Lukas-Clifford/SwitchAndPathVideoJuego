@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Player"))
         {
-            this.transform.position = spawnPoint;
+            
             gameManager.RespawnPlayers();
         }
     }

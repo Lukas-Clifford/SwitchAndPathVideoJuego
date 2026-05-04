@@ -136,20 +136,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2c144a4daa5824187ef9484bd29486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
-  animator: {fileID: 684134050}
+  gameManager: {fileID: 1639199461}
   player: {fileID: 2110984}
+  isPlayerOne: 0
+  animator: {fileID: 684134050}
+  shootingPoint: {fileID: 1479535919}
+  projectilePrefab: {fileID: 8728653977576560013, guid: a6579d34225aa41538d477b0740f75aa, type: 3}
+  shootForce: 20
   spawnPoint: {x: 2, y: 0.96, z: 0}
   speed: 5
   fallVelocity: 0
   JumpForce: 3
-  mainCamera: {fileID: 981792534}
-  cameraMaxDistance: 28
-  cameraMinDistance: 25
-  isPlayerOne: 0
-  gameManager: {fileID: 1639199461}
-  shootingPoint: {fileID: 1479535919}
-  projectilePrefab: {fileID: 8728653977576560013, guid: a6579d34225aa41538d477b0740f75aa, type: 3}
-  shootForce: 20
 --- !u!143 &2110984
 CharacterController:
   m_ObjectHideFlags: 0
@@ -6234,20 +6231,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2c144a4daa5824187ef9484bd29486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
-  animator: {fileID: 396506480}
+  gameManager: {fileID: 1639199461}
   player: {fileID: 1115930881}
+  isPlayerOne: 1
+  animator: {fileID: 396506480}
+  shootingPoint: {fileID: 304781494}
+  projectilePrefab: {fileID: 8728653977576560013, guid: a6579d34225aa41538d477b0740f75aa, type: 3}
+  shootForce: 20
   spawnPoint: {x: -5.88, y: 1.1, z: 0}
   speed: 5
   fallVelocity: 0
   JumpForce: 3
-  mainCamera: {fileID: 981792534}
-  cameraMaxDistance: 28
-  cameraMinDistance: 25
-  isPlayerOne: 1
-  gameManager: {fileID: 1639199461}
-  shootingPoint: {fileID: 304781494}
-  projectilePrefab: {fileID: 8728653977576560013, guid: a6579d34225aa41538d477b0740f75aa, type: 3}
-  shootForce: 20
 --- !u!143 &1115930881
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8440,6 +8434,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   player1: {fileID: 1115930880}
   player2: {fileID: 2110983}
+  enemy: {fileID: 2024164990}
+  mainCamera: {fileID: 981792534}
+  cameraMaxDistance: 23
+  cameraMinDistance: 17
 --- !u!4 &1639199462
 Transform:
   m_ObjectHideFlags: 0
@@ -10844,6 +10842,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 350527648}
   - {fileID: 1603516416}
+  - {fileID: 296893816}
+  - {fileID: 1639199462}
   - {fileID: 2125789213}
   - {fileID: 981792535}
   - {fileID: 166392194}
@@ -10863,5 +10863,3 @@ SceneRoots:
   - {fileID: 589635183}
   - {fileID: 108855093}
   - {fileID: 438574810}
-  - {fileID: 1639199462}
-  - {fileID: 296893816}

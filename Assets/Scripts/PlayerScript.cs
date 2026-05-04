@@ -2,10 +2,22 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public Animator animator;
+    public GameManager gameManager;
     
     public CharacterController player;
+    public bool isPlayerOne = true;
+
+    public Animator animator;
+    public Transform shootingPoint;
+    public Rigidbody projectilePrefab;
+
+    public float shootForce = 20f;
+
     public Vector3 spawnPoint;
+
+    public float speed = 5f;
+    public float fallVelocity = 0f;
+    public float JumpForce = 5f;
 
     private float horizontalMove = 0f;
     private float verticalMove = 0f;
@@ -15,37 +27,13 @@ public class PlayerScript : MonoBehaviour
 
     private float gravity = 9.8f;
 
-    public float speed = 5f;
-    public float fallVelocity = 0f;
-    public float JumpForce = 5f;
-
-
-    public Camera mainCamera;
-    private Vector3 camForward;
-    private Vector3 camRight;
-    private Vector3 camPos;
-
-    public int cameraMaxDistance = 23;
-    public int cameraMinDistance = 17;
-
-
-    public bool isPlayerOne = true;
-    public GameManager gameManager;
-    
-    
-    public Transform shootingPoint;
-    public Rigidbody projectilePrefab;
-    public float shootForce = 20f;
-
 
     void Start()
-    {
-        player = GetComponent<CharacterController>();
-    }
+    {}
 
     void Update()
     {    
-
+        // asignar controles de movimiento
         if (isPlayerOne)
         {
             horizontalMove = Input.GetAxis("Horizontal_P1");
@@ -57,67 +45,39 @@ public class PlayerScript : MonoBehaviour
             verticalMove = Input.GetAxis("Vertical_P2");
         }
         
-        
-
+        // chapar el movimiento dentro del rango 0 y 1
         playerInput = new Vector3(horizontalMove, 0, verticalMove);
         playerInput = Vector3.ClampMagnitude(playerInput, 1);
+
+
+        // movimiento según la camara
+        playerMovement = playerInput.x * gameManager.getCamRight() + playerInput.z * gameManager.getCamFoward();
+        playerMovement *= speed;
+
+        player.transform.LookAt(player.transform.position + playerMovement);
+
+        SetGravity();
+        PlayerSkills();
+        
+        // mover al jugador
+        player.Move(playerMovement*Time.deltaTime);
+        
+        // Booleanos de animaciones de correr
         if (playerInput.magnitude > 0.1f) 
             animator.SetBool("running", true);
         else 
             animator.SetBool("running", false);
 
 
-        playerMovement = playerInput.x * camRight + playerInput.z * camForward;
-        playerMovement *= speed;
-
-        player.transform.LookAt(player.transform.position + playerMovement);
-
-        
-        camDirection();
-        SetGravity();
-        PlayerSkills();
-
-        player.Move(playerMovement*Time.deltaTime);
-
-        
-        camPos = mainCamera.transform.position;
-        float distance = Vector3.Distance(camPos, player.transform.position);
-
-        if(distance >= cameraMaxDistance) 
-        {
-            mainCamera.transform.position += (new Vector3(0,0,3) * Time.deltaTime);
-        }
-        else if (distance <= cameraMinDistance)
-        {
-            mainCamera.transform.position -= (new Vector3(0,0,3) * Time.deltaTime);
-        }
-
+        // comprobar si está bajo el nivel 10 para reiniciar el nivel
         if (player.transform.position.y < -10)
         {
             gameManager.RespawnPlayers();
-            mainCamera.transform.position = new Vector3(
-                mainCamera.transform.position.x,
-                mainCamera.transform.position.y,
-                player.transform.position.z - 18f
-            );        
         }
-
-
+        
     }
 
 
-    private void camDirection()
-    {
-        camForward = mainCamera.transform.forward;
-        camRight = mainCamera.transform.right;
-
-        camForward.y = 0;
-        camRight.y = 0;
-
-        camForward = camForward.normalized;
-        camRight = camRight.normalized;
-
-    }
 
 
     public void SetGravity()
